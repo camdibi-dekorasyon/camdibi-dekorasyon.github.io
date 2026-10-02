@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Çamdibi Dekorasyon | Asma Tavan · Dekoratif Sıva · İç Dekorasyon</title>
+  <meta name="description" content="Çamdibi Dekorasyon (Taraklı, Sakarya) — asma tavan, boya, mantolama, alçı, sıva, fayans, İtalyan efekt duvar, duvar kağıdı, iç ve dış tasarım. Ücretsiz keşif için hemen ulaşın.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Yükleme ekranı -->
+  <div class="loader" id="loader">
+    <div class="loader__mark">ÇAMDİBİ</div>
+    <div class="loader__bar"><span id="loaderBar"></span></div>
+    <div class="loader__txt">Oda hazırlanıyor…</div>
+  </div>
+
+  <!-- Üst menü -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__brand">
+      <span class="nav__logo">ÇAMDİBİ</span>
+      <span class="nav__sub">DEKORASYON</span>
+    </a>
+    <nav class="nav__links" id="navLinks">
+      <a href="#hizmetler">Hizmetler</a>
+      <a href="#islerimiz">İşlerimiz</a>
+      <a href="#film">Reklam Filmi</a>
+      <a href="#biz">Biz Kimiz</a>
+      <a href="#iletisim" class="nav__cta">Ücretsiz Keşif</a>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Menü"><span></span><span></span><span></span></button>
+  </header>
+
+  <!-- HERO: 3D oda -->
+  <section class="hero" id="top">
+    <canvas id="room3d" aria-label="Asma tavanlı 3D oda modeli — fareyle veya parmağınızla çevirebilirsiniz"></canvas>
+    <div class="hero__fallback" id="fallback" hidden>
+      <img src="assets/is2.jpg" alt="Çamdibi Dekorasyon uygulaması">
+    </div>
+    <div id="hotspots" class="hotspots"></div>
+
+    <div class="hero__shade"></div>
+    <div class="hero__content">
+      <p class="eyebrow"><span class="dot"></span> Asma Tavan · İtalyan Efekt · Mantolama</p>
+      <h1>Tavandan duvara,<br><em>mekânınızı</em> yeniden tasarlıyoruz.</h1>
+      <p class="hero__lead">Odayı parmağınızla çevirin, LED rengini değiştirin, gece moduna alın. Gördüğünüz duvarlar bizim gerçek işlerimizden.</p>
+      <div class="hero__btns">
+        <a href="#iletisim" class="btn btn--primary">Ücretsiz Keşif İste</a>
+        <a href="#islerimiz" class="btn btn--ghost">İşlerimizi Gör</a>
+      </div>
+    </div>
+
+    <div class="studio" id="studio">
+      <div class="studio__title">Işık Stüdyosu</div>
+      <div class="studio__row">
+        <span class="studio__lbl">Gizli LED</span>
+        <div class="swatches" id="swatches">
+          <button class="sw active" data-color="#9dff1f" style="--c:#9dff1f" title="Neon Yeşil"></button>
+          <button class="sw" data-color="#ffc27a" style="--c:#ffc27a" title="Sıcak Beyaz"></button>
+          <button class="sw" data-color="#7fd4ff" style="--c:#7fd4ff" title="Buz Mavisi"></button>
+          <button class="sw" data-color="#c58bff" style="--c:#c58bff" title="Lavanta"></button>
+          <button class="sw" data-color="#ff6b8b" style="--c:#ff6b8b" title="Gül"></button>
+        </div>
+      </div>
+      <div class="studio__row">
+        <button class="tgl" id="tglNight"><span class="tgl__ico">☾</span> Gece modu</button>
+        <button class="tgl on" id="tglRotate"><span class="tgl__ico">⟳</span> Tur</button>
+        <button class="tgl on" id="tglHot"><span class="tgl__ico">◎</span> Etiketler</button>
+      </div>
+    </div>
+
+    <div class="hero__hint" id="hint">
+      <span class="hand">☝</span> Sürükle · çevir · yakınlaştır
+    </div>
+    <a href="#hizmetler" class="scroll-cue" aria-label="Aşağı kaydır"><span></span></a>
+  </section>
+
+  <!-- Kayan şerit -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Asma Tavan</span><i>◆</i><span>İtalyan Efekt Duvar</span><i>◆</i><span>Mantolama</span><i>◆</i><span>Boya &amp; Badana</span><i>◆</i><span>Alçı &amp; Sıva</span><i>◆</i><span>Fayans</span><i>◆</i><span>Duvar Kağıdı</span><i>◆</i><span>Rölyef Sıva</span><i>◆</i><span>İç &amp; Dış Tasarım</span><i>◆</i><span>Gizli LED</span><i>◆</i>
+      <span>Asma Tavan</span><i>◆</i><span>İtalyan Efekt Duvar</span><i>◆</i><span>Mantolama</span><i>◆</i><span>Boya &amp; Badana</span><i>◆</i><span>Alçı &amp; Sıva</span><i>◆</i><span>Fayans</span><i>◆</i><span>Duvar Kağıdı</span><i>◆</i><span>Rölyef Sıva</span><i>◆</i><span>İç &amp; Dış Tasarım</span><i>◆</i><span>Gizli LED</span><i>◆</i>
+    </div>
+  </div>
+
+  <!-- Hizmetler -->
+  <section class="section" id="hizmetler">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow"><span class="dot"></span> Hizmetlerimiz</p>
+        <h2>Tek ekip, <em>komple</em> dekorasyon.</h2>
+        <p class="sec-lead">İçeriden dışarıya, tavandan zemine: keşiften teslimata kadar her aşamada aynı ustalar. Malzemeyi birlikte seçer, işi temiz teslim ederiz.</p>
+      </div>
+      <div class="cards">
+        <article class="card tilt reveal">
+          <div class="card__ico">
+            <svg viewBox="0 0 48 48"><path d="M4 12h40M8 12v6h32v-6M14 18v2M24 18v2M34 18v2" /><path class="glow" d="M10 16h28"/></svg>
+          </div>
+          <h3>Asma Tavan</h3>
+          <p>Alçıpan, kademeli ve kaset asma tavan uygulamaları. Mekânın oranına göre tasarım.</p>
+        </article>
+        <article class="card tilt reveal">
+          <div class="card__ico">
+            <svg viewBox="0 0 48 48"><path d="M6 14h36v6H6z"/><path class="glow" d="M10 24c4 4 24 4 28 0M14 30c3 2 17 2 20 0"/></svg>
+          </div>
+          <h3>Gizli LED &amp; Spot</h3>
+          <p>Tavan içi gizli LED şerit, sıcak beyaz ve renkli seçenekler, sıva altı ve ray spot aydınlatma.</p>
+        </article>
+        <article class="card tilt reveal">
+          <div class="card__ico">
+            <svg viewBox="0 0 48 48"><path d="M8 8h32v32H8z"/><path class="glow" d="M12 30c6-10 10 4 16-6s8-4 8-4M12 20c4-6 8 0 12-4"/></svg>
+          </div>
+          <h3>İtalyan Efekt Duvar</h3>
+          <p>Venedik sıva, İtalyan efekt boya, metalik ve beton görünümlü dekoratif duvarlar.</p>
+        </article>
+        <article class="card tilt reveal">
+          <div class="card__ico">
+            <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="14"/><circle cx="24" cy="24" r="8"/><path class="glow" d="M24 10v6M24 32v6M10 24h6M32 24h6M14 14l4 4M30 30l4 4M34 14l-4 4M18 30l-4 4"/></svg>
+          </div>
+          <h3>Rölyef Mandala Sıva</h3>
+          <p>Bizim imzamız: el işçiliği mandala desenli rölyef sıva. Duvarınız bir sanat eseri olsun.</p>
+        </article>
+        <article class="card tilt reveal">
+          <div class="card__ico">
+            <svg viewBox="0 0 48 48"><path d="M8 10h26v10H8z"/><path d="M34 15h6v10H24v6"/><path class="glow" d="M21 31h6v10h-6z"/></svg>
+          </div>
+          <h3>Boya &amp; Badana</h3>
+          <p>İç ve dış cephe boya, badana, tamir ve hazırlık. Eşyanız korunur, iş temiz teslim edilir.</p>
+        </article>
+        <article class="card tilt reveal">
+          <div class="card__ico">
+            <svg viewBox="0 0 48 48"><path d="M6 40h36"/><path d="M10 34l18-18 6 6-18 18H10z"/><path class="glow" d="M28 16l4-4 6 6-4 4"/></svg>
+          </div>
+          <h3>Alçı &amp; Sıva</h3>
+          <p>Kaba ve ince sıva, saten alçı, perdah. Düzgün, çatlaksız, boyaya hazır yüzeyler.</p>
+        </article>
+        <article class="card tilt reveal">
+          <div class="card__ico">
+            <svg viewBox="0 0 48 48"><path d="M8 40V18L24 6l16 12v22z"/><path class="glow" d="M13 40V21L24 13l11 8v19"/></svg>
+          </div>
+          <h3>Mantolama</h3>
+          <p>Dış cephe ısı yalıtımı (mantolama) ile kışın sıcak, yazın serin evler ve düşük faturalar.</p>
+        </article>
+        <article class="card tilt reveal">
+          <div class="card__ico">
+            <svg viewBox="0 0 48 48"><path d="M6 6h36v36H6z"/><path class="glow" d="M24 6v36M6 24h36"/></svg>
+          </div>
+          <h3>Fayans &amp; Seramik</h3>
+          <p>Banyo, mutfak ve zemin fayans–seramik döşeme. Düzgün derz, temiz işçilik.</p>
+        </article>
+        <article class="card tilt reveal">
+          <div class="card__ico">
+            <svg viewBox="0 0 48 48"><path d="M10 6h22v36H10z"/><path d="M32 10h6v6h-6"/><path class="glow" d="M15 14l4 4 4-4 4 4M15 24l4 4 4-4 4 4M15 34l4 4 4-4 4 4"/></svg>
+          </div>
+          <h3>Duvar Kağıdı</h3>
+          <p>Desenli, dokulu ve 3D duvar kağıdı uygulaması. Hızlı değişim, büyük etki.</p>
+        </article>
+        <article class="card tilt reveal">
+          <div class="card__ico">
+            <svg viewBox="0 0 48 48"><path d="M4 10h40v5H4z"/><path class="glow" d="M8 15c2 4 6 4 8 0s6-4 8 0 6 4 8 0 6-4 8 0"/></svg>
+          </div>
+          <h3>Kartonpiyer</h3>
+          <p>Klasik ve modern kartonpiyer, duvar çıtaları, tavan göbeği ve köşe detayları.</p>
+        </article>
+        <article class="card tilt reveal">
+          <div class="card__ico">
+            <svg viewBox="0 0 48 48"><path d="M6 42h36"/><path d="M10 42V14h14v28M24 22h14v20"/><path class="glow" d="M14 20h6M14 28h6M28 28h6M28 34h6"/></svg>
+          </div>
+          <h3>İç &amp; Dış Tasarım</h3>
+          <p>Ev, ofis, mağaza ve cephe için tasarım: renk, malzeme ve ışık seçimini birlikte yapıyoruz.</p>
+        </article>
+        <article class="card tilt reveal">
+          <div class="card__ico">
+            <svg viewBox="0 0 48 48"><path d="M16 30a8 8 0 1 1 6-13h20v6h-4v4h-6v-4h-10a8 8 0 0 1-6 7z"/><circle class="glow" cx="14" cy="22" r="2"/></svg>
+          </div>
+          <h3>Anahtar Teslim Dekorasyon</h3>
+          <p>Baştan sona komple dekorasyon ve tadilat. Tek muhatap, net fiyat, net tarih.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- İşlerimiz -->
+  <section class="section section--alt" id="islerimiz">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow"><span class="dot"></span> İşlerimiz</p>
+        <h2>Laf değil, <em>iş</em> konuşsun.</h2>
+        <p class="sec-lead">Son uygulamalarımızdan kareler. Büyütmek için dokunun.</p>
+      </div>
+
+      <div class="gallery">
+        <figure class="g-item g-item--tall tilt reveal" data-full="assets/is1.jpg" data-cap="Turkuaz zemin üzeri bakır mandala rölyef sıva, ahşap çıta çerçeve">
+          <img src="assets/is1.jpg" alt="Turkuaz mandala rölyef sıva" loading="lazy">
+          <figcaption><span>Rölyef Sıva</span>Turkuaz &amp; Bakır Mandala</figcaption>
+        </figure>
+        <figure class="g-item tilt reveal" data-full="assets/is2.jpg" data-cap="Gümüş tonlarda mandala rölyef duvar, meander desenli kartonpiyer ve spot aydınlatma">
+          <img src="assets/is2.jpg" alt="Gümüş mandala rölyef duvar" loading="lazy">
+          <figcaption><span>Rölyef Sıva + Kartonpiyer</span>Gümüş Mandala Duvar</figcaption>
+        </figure>
+        <figure class="g-item g-item--tall tilt reveal" data-full="assets/is4.jpg" data-cap="Bronz fırça efektli dekoratif boya, siyah-bakır kolon ve sıva altı spotlar">
+          <img src="assets/is4.jpg" alt="Bronz dekoratif boya duvar" loading="lazy">
+          <figcaption><span>Dekoratif Boya</span>Bronz &amp; Bakır Efekt</figcaption>
+        </figure>
+        <figure class="g-item tilt reveal" data-full="assets/is3.jpg" data-cap="Mandala rölyef sıva detay — ışık açısıyla değişen doku">
+          <img src="assets/is3.jpg" alt="Mandala sıva detay" loading="lazy">
+          <figcaption><span>Detay</span>Işıkla Değişen Doku</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Reklam filmi -->
+  <section class="section promo" id="film">
+    <div class="wrap promo__in">
+      <div class="phone reveal" id="phone">
+        <div class="phone__notch"></div>
+        <video id="promoVideo" src="assets/video.mp4" poster="assets/logo.jpg" muted loop playsinline preload="metadata"></video>
+        <button class="phone__sound" id="promoSound" aria-label="Sesi aç">🔇 Sesi aç</button>
+      </div>
+      <div class="promo__txt reveal">
+        <p class="eyebrow"><span class="dot"></span> Reklam Filmimiz</p>
+        <h2>Bizi <em>39 saniyede</em> tanıyın.</h2>
+        <p class="sec-lead">İşimizi, ekibimizi ve ustalığımızı kısa filmimizde izleyin. Beğendiyseniz Instagram'da da takip edin.</p>
+        <div class="hero__btns">
+          <a href="https://instagram.com/camdibiyasin" target="_blank" rel="noopener" class="btn btn--primary">@camdibiyasin</a>
+          <a href="#iletisim" class="btn btn--ghost">Teklif Al</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Biz kimiz -->
+  <section class="section" id="biz">
+    <div class="wrap about">
+      <div class="about__img reveal tilt">
+        <img src="assets/logo.jpg" alt="Çamdibi Dekorasyon ekibi">
+      </div>
+      <div class="about__txt reveal">
+        <p class="eyebrow"><span class="dot"></span> Biz Kimiz</p>
+        <h2>İki usta, <em>tek imza.</em></h2>
+        <p>Tahsin ve Yasin Çamdibi’nin kurduğu Çamdibi Dekorasyon; asma tavandan dekoratif sıvaya kadar iç mekânın her yüzeyini işleyen bir ustalık ekibi. Her işe kendi evimiz gibi bakıyor, detaydan taviz vermiyoruz.</p>
+        <ul class="ticks">
+          <li><b>Ücretsiz keşif</b> — yerinde ölçü, net fiyat</li>
+          <li><b>Temiz çalışma</b> — eşya koruma, iş sonu temizlik</li>
+          <li><b>Söz verilen tarihte teslim</b></li>
+          <li><b>Malzeme danışmanlığı</b> — bütçenize uygun seçenekler</li>
+        </ul>
+        <div class="steps">
+          <div class="step"><b>01</b><span>Keşif &amp; ölçü</span></div>
+          <div class="step"><b>02</b><span>Tasarım &amp; teklif</span></div>
+          <div class="step"><b>03</b><span>Uygulama</span></div>
+          <div class="step"><b>04</b><span>Temiz teslim</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- İletişim -->
+  <section class="section section--contact" id="iletisim">
+    <div class="wrap contact">
+      <div class="contact__info reveal">
+        <p class="eyebrow"><span class="dot"></span> İletişim</p>
+        <h2>Mekânınızı <em>konuşalım.</em></h2>
+        <p class="sec-lead">Taraklı, Sakarya ve çevresinde hizmet veriyoruz. Formu doldurun, mesajınız doğrudan WhatsApp'a hazır gelsin. Ya da hemen arayın.</p>
+        <div class="contact__lines">
+          <a class="cline cline--link" href="tel:+905396443468"><span>Tahsin Çamdibi</span><b>0539 644 34 68</b></a>
+          <a class="cline cline--link" href="tel:+905399734413"><span>Yasin Çamdibi</span><b>0539 973 44 13</b></a>
+          <a class="cline cline--link" href="https://instagram.com/camdibiyasin" target="_blank" rel="noopener"><span>Instagram</span><b>@camdibiyasin</b></a>
+          <div class="cline"><span>Bölge</span><b>Taraklı, Sakarya ve çevresi</b></div>
+          <div class="cline"><span>Çalışma</span><b>7 gün 24 saat</b></div>
+        </div>
+      </div>
+      <form class="form reveal" id="form">
+        <label>Kime gönderilsin?
+          <select name="kime">
+            <option value="905396443468">Tahsin Çamdibi · 0539 644 34 68</option>
+            <option value="905399734413">Yasin Çamdibi · 0539 973 44 13</option>
+          </select>
+        </label>
+        <label>Adınız<input name="ad" required placeholder="Ad Soyad"></label>
+        <label>Hizmet
+          <select name="hizmet">
+            <option>Asma Tavan</option>
+            <option>Gizli LED &amp; Spot</option>
+            <option>İtalyan Efekt Duvar</option>
+            <option>Rölyef Mandala Sıva</option>
+            <option>Boya &amp; Badana</option>
+            <option>Alçı &amp; Sıva</option>
+            <option>Mantolama</option>
+            <option>Fayans &amp; Seramik</option>
+            <option>Duvar Kağıdı</option>
+            <option>Kartonpiyer</option>
+            <option>İç &amp; Dış Tasarım</option>
+            <option>Anahtar Teslim Dekorasyon</option>
+          </select>
+        </label>
+        <label>Semt / Adres<input name="adres" placeholder="Örn. Taraklı, Sakarya"></label>
+        <label>Mesajınız<textarea name="mesaj" rows="4" placeholder="Kaç m², hangi oda, ne düşünüyorsunuz?"></textarea></label>
+        <button class="btn btn--primary btn--full" type="submit">WhatsApp ile Gönder</button>
+        <p class="form__note" id="formNote"></p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="wrap foot__in">
+      <div><span class="nav__logo">ÇAMDİBİ</span> <span class="nav__sub">DEKORASYON</span></div>
+      <div class="foot__copy"><a href="https://instagram.com/camdibiyasin" target="_blank" rel="noopener">@camdibiyasin</a> · Taraklı, Sakarya · © <span id="yr"></span> Çamdibi Dekorasyon</div>
+    </div>
+  </footer>
+
+  <a class="wa-float" id="waFloat" href="#iletisim" aria-label="WhatsApp">
+    <svg viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 14.4 14.4 0 0 0 5.5 4.9c2 .9 2.8.9 3.8.8a3.2 3.2 0 0 0 2.1-1.5 2.6 2.6 0 0 0 .2-1.5c-.1-.2-.3-.3-.6-.4z"/></svg>
+  </a>
+
+  <!-- Lightbox -->
+  <div class="lb" id="lb" hidden>
+    <button class="lb__x" id="lbX" aria-label="Kapat">×</button>
+    <div class="lb__stage" id="lbStage"></div>
+    <p class="lb__cap" id="lbCap"></p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/shaders/CopyShader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/shaders/LuminosityHighPassShader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/shaders/GammaCorrectionShader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/postprocessing/EffectComposer.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/postprocessing/RenderPass.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/postprocessing/ShaderPass.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
+  <script src="assets/textures.js"></script>
+  <script src="room3d.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>
