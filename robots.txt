@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yeltekintolga67-bot.github.io/camdibi-web/sitemap.xml
+Sitemap: https://camdibi-dekorasyon.github.io/sitemap.xml
